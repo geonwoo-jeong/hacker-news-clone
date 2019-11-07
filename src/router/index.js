@@ -9,6 +9,10 @@ Vue.use(VueRouter);
 export default new VueRouter({
   routes: [
     {
+      path: "/",
+      redirect: "/news"
+    },
+    {
       path: "/news",
       component: NewsView
     },
