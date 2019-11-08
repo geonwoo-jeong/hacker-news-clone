@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div v-for="news in this.$store.state.news" :key="news.id">{{ news.title }}</div>
+    <p v-for="news in someNews" :key="news.id">
+      <a :href="news.url">{{ news.title }}</a>
+      <small>{{ news.time_ago }} by {{ news.user }}</small>
+    </p>
   </div>
 </template>
 
@@ -8,7 +11,7 @@
 export default {
   // Use Computed
   computed: {
-    news() {
+    someNews() {
       return this.$store.state.news;
     }
   },
