@@ -1,19 +1,13 @@
 <template>
   <div>
-    <div v-for="user in users" :key="user.id">{{ user.title }}</div>
+    <div v-for="news in this.$store.state.news" :key="news.id">{{ news.title }}</div>
   </div>
 </template>
 
 <script>
-import { fetchNewsList } from "../api";
 export default {
-  data() {
-    return {
-      users: []
-    };
-  },
   created() {
-    fetchNewsList().then(response => (this.users = response.data));
+    this.$store.dispatch("FETCH_NEWS_LIST");
   }
 };
 </script>
