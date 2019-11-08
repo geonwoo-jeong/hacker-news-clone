@@ -6,6 +6,12 @@
 
 <script>
 export default {
+  // Use Computed
+  computed: {
+    news() {
+      return this.$store.state.news;
+    }
+  },
   created() {
     this.$store.dispatch("FETCH_NEWS_LIST");
   }
