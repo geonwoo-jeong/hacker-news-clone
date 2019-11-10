@@ -2,5 +2,6 @@ export default {
   news: [],
   jobs: [],
   asks: [],
-  user: {}
+  user: {},
+  item: {}
 };

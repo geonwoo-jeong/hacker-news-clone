@@ -2,7 +2,8 @@ import {
   fetchAskList,
   fetchJobList,
   fetchNewsList,
-  fetchUserInfo
+  fetchUserInfo,
+  fetchItemInfo
 } from "../api";
 
 export default {
@@ -15,7 +16,14 @@ export default {
   FETCH_ASK_LIST({ commit }) {
     fetchAskList().then(response => commit("SET_ASK_LIST", response.data));
   },
-  FETCH_USER_INFO({ commit }) {
-    fetchUserInfo().then(response => commit("SET_USER_INFO", response.data));
+  FETCH_USER_INFO({ commit }, user) {
+    fetchUserInfo(user).then(response =>
+      commit("SET_USER_INFO", response.data)
+    );
+  },
+  FETCH_ITEM_INFO({ commit }, item) {
+    fetchItemInfo(item).then(response =>
+      commit("SET_ITEM_INFO", response.data)
+    );
   }
 };

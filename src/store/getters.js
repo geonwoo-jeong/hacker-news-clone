@@ -4,5 +4,8 @@ export default {
   },
   user(state) {
     return state.user;
+  },
+  item(state) {
+    return state.item;
   }
 };
