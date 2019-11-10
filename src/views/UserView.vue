@@ -1,20 +1,13 @@
 <template>
-  <div>
-    <p>name : {{ user.id }}</p>
-    <p>karma : {{ user.karma }}</p>
-    <p>created : {{ user.created }}</p>
-  </div>
+  <list-item></list-item>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import ListItem from "../components/ListItem";
+
 export default {
-  computed: {
-    ...mapGetters(["user"])
-  },
-  created() {
-    const { id } = this.$route.params;
-    this.$store.dispatch("FETCH_USER_INFO", id);
+  components: {
+    ListItem
   }
 };
 </script>

@@ -1,28 +1,16 @@
 <template>
-  <div>
-    <p v-for="news in someNews" :key="news.id">
-      <a :href="news.url">{{ news.title }}</a>
-      <small>
-        {{ news.time_ago }} by
-        <router-link :to="`/user/${news.user}`">{{ news.user }}</router-link>
-      </small>
-    </p>
-  </div>
+  <list-item></list-item>
 </template>
 
 <script>
+import ListItem from "../components/ListItem";
+
 export default {
-  // Use Computed
-  computed: {
-    someNews() {
-      return this.$store.state.news;
-    }
-  },
-  created() {
-    this.$store.dispatch("FETCH_NEWS_LIST");
+  components: {
+    ListItem
   }
 };
 </script>
 
-<style>
+<style scoped>
 </style>
