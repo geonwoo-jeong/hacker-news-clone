@@ -27,34 +27,9 @@
 
 <script>
 export default {
-  created() {
-    const { name } = this.$route;
-    const { dispatch } = this.$store;
-
-    switch (name) {
-      case "news":
-        dispatch("FETCH_NEWS_LIST");
-        break;
-      case "ask":
-        dispatch("FETCH_ASK_LIST");
-        break;
-      case "jobs":
-        dispatch("FETCH_JOB_LIST");
-        break;
-    }
-  },
   computed: {
     items() {
-      const { name } = this.$route;
-
-      switch (name) {
-        case "news":
-          return this.$store.state.news;
-        case "ask":
-          return this.$store.state.asks;
-        case "jobs":
-          return this.$store.state.jobs;
-      }
+      return this.$store.state.list;
     }
   }
 };
