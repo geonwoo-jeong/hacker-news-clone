@@ -6,9 +6,10 @@ export default function createListView(name) {
     name,
     created() {
       bus.$emit("start:spinner");
-      this.$store.dispatch("FETCH_LIST", this.$route.name).then(() => {
-        bus.$emit("end:spinner");
-      });
+      this.$store.dispatch("FETCH_LIST", this.$route.name);
+    },
+    mounted() {
+      bus.$emit("end:spinner");
     },
     render(createElement) {
       return createElement(ListView);
