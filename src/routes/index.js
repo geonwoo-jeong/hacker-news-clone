@@ -20,9 +20,10 @@ export const router = new VueRouter({
       path: "/news",
       name: "news",
       component: NewsView,
-      beforeEnter: (to, from, next) => {
+      beforeEnter: async (to, from, next) => {
         bus.$emit("start:spinner");
-        store.dispatch("FETCH_LIST", to.name).then(() => next());
+        await store.dispatch("FETCH_LIST", to.name);
+        next();
       }
     },
     {
