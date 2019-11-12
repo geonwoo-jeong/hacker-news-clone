@@ -1,24 +1,13 @@
 # hacker-news-clone
 
-## Project setup
-```
-npm install
-```
+Hacker News clone with Vue, Vuex
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Studying
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [x] Vue Cli
+- [x] Vue-Router
+- [x] Vuex
+- [x] Mixin
+- [x] HOC (High Order Component)
+- [x] Life Cycle
+- [x] Router Navigation Guards
